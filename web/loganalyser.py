@@ -4,7 +4,7 @@ import datetime
 import time
 import json
 import math
-logfile = "D:/test_log.txt"
+logfile = "access.log"
 
 file = open(logfile, "r")
 ips = []
@@ -21,5 +21,6 @@ for text in file.readlines():
         
 print(ips)           
 
-json_data = json.dumps(data)
-print (json_data)
+with open('../orch/dummy.json', 'w') as fp:
+    fp.write(json.dumps(ips))
+    
