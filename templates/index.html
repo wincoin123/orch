@@ -1,2 +1,133 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
 
+<head id="head">
+    <title>
+        Site Selector
+    </title>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Lato:700,900|Roboto:400,400i,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+    <meta charset="utf-8">
+    <link href="favicon.png" type="image/png" rel="shortcut icon" />
+    <link href="favicon.png" type="image/png" rel="icon" />
+    <style>
+        h1 {
+            font-family: "Lato",sans-serif;
+            font-size: 3rem!important;
+            max-width: 640px;
+            line-height: 1.2!important;
+            font-weight: 900!important;
+        }
+
+    </style>
+
+</head>
+
+<body class="LTR Safari Chrome Safari52 Chrome52 ENUS ContentBody">
+    <form method="post" action="/siteselector" id="form">
+
+        <div class="site-selector-logo-container">
+            <p style="text-align: center; padding-top:16px; padding-bottom: 130px;">
+                <img alt="windstream-logo.png" src={{url_for('static', filename='kinetic_pinwheel_h_desktop.png')}} title="windstream-logo.png" />
+            </p>
+        </div>
+        <div class="bg-white">
+            <div class="container">
+
+                <h1 class="ui center aligned icon header" style="padding-bottom: 130px;">
+                    Welcome! What can we help you with today?
+                </h1>
+
+                <div class="ui three column equal height stackable grid container">
+                    <div class="column">
+                        <div class="ui segment center aligned">
+                            <div class="ui image">
+                                <img id="p_lt_ctl01_Windstream_WidgetContainer_Windstream_WidgetContainerColumn_Layout_WSTileLayoutContainer_WSTileLayoutContainerColumn_Layout_Windstream_PromoTile_PromoImage"
+                                    src={{url_for('static', filename='father-and-son-with-tablet_jpg_500_333.jpg')}} />
+                            </div>
+                            <div class="content">
+                                <h2 class="header">Residential</h2>
+
+                                <div class="description">
+                                    Keep your home connected with powerful High-Speed Internet, Digital&nbsp;TV, Phone&nbsp;Service.
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <div class="cta-container">
+                                    <a id="p_lt_ctl01_Windstream_WidgetContainer_Windstream_WidgetContainerColumn_Layout_WSTileLayoutContainer_WSTileLayoutContainerColumn_Layout_Windstream_PromoTile_PromoLinkButton"
+                                        class="ui green button" type="button" href="/" target="_self" aria-label href="javascript:__doPostBack(&#39;p$lt$ctl01$Windstream_WidgetContainer$Windstream_WidgetContainerColumn_Layout$WSTileLayoutContainer$WSTileLayoutContainerColumn_Layout$Windstream_PromoTile$PromoLinkButton&#39;,&#39;&#39;)">Visit Residential</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment center aligned">
+                            <div class="ui image">
+                                <img id="p_lt_ctl01_Windstream_WidgetContainer_Windstream_WidgetContainerColumn_Layout_WSTileLayoutContainer_WSTileLayoutContainerColumn_Layout_Windstream_PromoTile1_PromoImage"
+                                    src={{url_for('static', filename='woman-with-laptop-02_jpg_500_333.jpg')}} alt="Woman with laptop" />
+                            </div>
+                            <div class="content">
+                                <h2 class="header">Small Business</h2>
+
+                                <div class="description">
+                                    Services designed for business ranging from home/small offices up to 50 employees, including Internet Solutions, Phone Services,
+                                    and 24/7 Technical&nbsp;Support.
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <div class="cta-container">
+                                    <a id="p_lt_ctl01_Windstream_WidgetContainer_Windstream_WidgetContainerColumn_Layout_WSTileLayoutContainer_WSTileLayoutContainerColumn_Layout_Windstream_PromoTile_PromoLinkButton"
+                                        class="ui green button" type="button" href="/" target="_self" aria-label href="javascript:__doPostBack(&#39;p$lt$ctl01$Windstream_WidgetContainer$Windstream_WidgetContainerColumn_Layout$WSTileLayoutContainer$WSTileLayoutContainerColumn_Layout$Windstream_PromoTile$PromoLinkButton&#39;,&#39;&#39;)">Visit Small Business</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment center aligned">
+                            <div class="ui image">
+                                <img id="p_lt_ctl01_Windstream_WidgetContainer_Windstream_WidgetContainerColumn_Layout_WSTileLayoutContainer_WSTileLayoutContainerColumn_Layout_Windstream_PromoTile2_PromoImage"
+                                    src={{url_for('static', filename='business-meeting-01_jpg_500_333.jpg')}} alt="Two men and two women having a business meeting"
+                                />
+                            </div>
+                            <div class="content">
+                                <h2 class="header">Enterprise</h2>
+
+                                <div class="description">
+                                    Large &amp; Medium Business services for multi-location businesses. Networking, SD-WAN, Cloud, Security and Unified&nbsp;Communications.
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <div class="cta-container">
+                                    <a id="p_lt_ctl01_Windstream_WidgetContainer_Windstream_WidgetContainerColumn_Layout_WSTileLayoutContainer_WSTileLayoutContainerColumn_Layout_Windstream_PromoTile_PromoLinkButton"
+                                        class="ui green button" type="button" href="/" target="_self" aria-label href="javascript:__doPostBack(&#39;p$lt$ctl01$Windstream_WidgetContainer$Windstream_WidgetContainerColumn_Layout$WSTileLayoutContainer$WSTileLayoutContainerColumn_Layout$Windstream_PromoTile$PromoLinkButton&#39;,&#39;&#39;)">Visit Enterprise</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="site-selector-footer">
+
+        </div>
+        <div class="ui vertical footer segment center aligned">
+            <div class="ui horizontal small divided link list">
+                <p>Copyright &copy;&nbsp;2019 Windstream Communications. All&nbsp;rights reserved.&nbsp;
+                    <a href="http://careers.windstream.com/" onclick="trackClick('careers')" title="Careers">Careers</a>&nbsp;|&nbsp;
+                    <a href="/privacy" onclick="trackClick('privacy policy')" title="Privacy Policy">Privacy Policy</a>&nbsp;|&nbsp;
+                    <a href="/terms" onclick="trackClick('terms and conditions')" title="Terms and Conditions">Terms and Conditions</a>&nbsp;|&nbsp;
+                    <a href="/legal-notices" onclick="trackClick('legal notices')" title="Legal Notices">Legal Notices</a>&nbsp;|&nbsp;
+                    <a href="/broadband-network-statement" onclick="trackClick('windstream broadband network statement')" title="Windstream Broadband Network Statement">Windstream Broadband Network Statement</a>
+                </p>
+            </div>
+        </div>
+        </div>
+
+    </form>
+</body>
+
+</html>
