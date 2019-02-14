@@ -25,24 +25,21 @@
         </div>
         <div class="tbl-content">
             <table id="ip_table" cellpadding="0" cellspacing="0" border="0">
+              {% for key, value in data.items() %}
+              <tr>
+                  <th>{{ key }}</th>
+                  <th>{{ value.last_timestamp }}</th>
+                  <th>{{ value.entries_last_minute }}</th>
+              </tr>
+              {% endfor %}
             </table>
         </div>
     </section>
 </body>
-</html>
 
 <script>
-    $(document).ready(function () {
-	    $.getJSON( '{{ url_for('static', filename='dummyRefined.json') }}', function(data){
-            var ip_data = '';
-            $.each(data, function(key, value){
-                ip_data += '<tr>';
-                ip_data += '<td>' + key + '</td>';
-                ip_data += '<td>' + value.last_timestamp + '</td>';
-                ip_data += '<td>' + value.entries_last_minute + '</td>';
-                ip_data += '</tr>';
-            });
-            $('#ip_table').append(ip_data);
-       });
-    });
+  setTimeout(function(){
+     window.location.reload(1);
+  }, 10000);
 </script>
+</html>

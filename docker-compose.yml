@@ -1,23 +1,27 @@
 version: '3'
 services:
   webapp:
-    build: 
+    build:
       context: .
     ports:
       - 8080:8080
     volumes:
       - .:/app
-  monitor:
-    build: 
-      context: ./web
-    ports:
-      - 80:80
-    volumes:
-      - .:/app
+
   orchestrator:
-    build: 
+    build:
       context: ./orch
     ports:
       - 8082:8080
     volumes:
       - .:/app
+    depends_on:
+      - webapp
+
+  monitor:
+    build:
+      context: ./app
+    ports:
+      - 80:80
+    depends_on:
+      - orchestrator
