@@ -9,8 +9,8 @@ import datetime
 import math
 import requests
 
-server_ip = 'http://192.168.56.11:8080'
-orch_ip = 'http://192.168.56.11:8082'
+server_ip = 'http://192.168.56.20:8080'
+orch_ip = 'http://192.168.56.20:8082'
 logfile = '/var/log/nginx/mysite.access.log'
 conffile = '/etc/nginx/conf.d/custom.conf'
 subprocess.run(['nginx'])

@@ -1,14 +1,22 @@
 from flask import Flask, render_template, request, jsonify, url_for
 import json
+import requests
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    with open("dummyRefined.json") as fp:
-      try:
-        data = json.load(fp)
-      except ValueError:
+    data = {}
+    try:
+        resp = requests.get('http://192.168.56.20:8081/getBlockedIps')
+        res_json = resp.json()
+        for x in res_json['blockedIps']:
+            value = {}
+            value['last_timestamp'] = x[1]
+            value['entries_last_minute'] = 6
+            data[x[0]] = value
+        print(data)
+    except ValueError:
         data = []
     return render_template("index.html", data=data)
 
@@ -41,15 +49,28 @@ def post_data_for_filtering():
             blacklist[i['ipAddress']]['last_timestamp'] = i['timestamp']
 
     refined_data = {}
-
+    print(blacklist)
     for key, value in blacklist.items():
         if value['entries_last_minute'] > 6:
             refined_data[key] = value
 
     with open('dummyRefined.json', 'w') as fp:
         fp.write(json.dumps(refined_data, indent=4))
+    print(refined_data)
 
-    return jsonify(refined_data)
+    for key,value in refined_data.items():
+        print(key)
+        print(value)
+        res = requests.post('http://192.168.56.20:8081/blockIp',json={'ip':key,'timestamp':value['last_timestamp']})
+        print(res.__dict__)
+
+    resp = requests.get('http://192.168.56.20:8081/getBlockedIps')
+    res_json = resp.json()
+    blocked_ips = {}
+    for x in res_json['blockedIps']:
+        blocked_ips[x[0]] = x
+    
+    return jsonify(blocked_ips)
 
 
 if __name__ == '__main__':

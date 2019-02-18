@@ -1,7 +1,7 @@
 const http = require('http');
 
 setInterval(() => {
-http.get('http://192.168.56.11', (resp) => {
+http.get('http://192.168.56.20', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.

@@ -18,3 +18,10 @@ services:
     depends_on:
       - webapp
 
+  monitor:
+    build:
+      context: ./app
+    ports:
+      - 80:80
+    depends_on:
+      - orchestrator
